@@ -1,0 +1,21 @@
+* Doom emacs private modules
+
+** Inspiration
+
+- https://github.com/jwintz/doom
+
+** Why Doom Emacs ?
+
+- it is blazing fast
+- it is well thought
+
+** Installation
+
+#+BEGIN_SRC shell
+$ git clone -b develop --single-branch https://github.com/hlissner/doom-emacs.git .emacs.d
+$ git clone -b develop --single-branch https://github.com/rphillips/doom.git .doom.d
+$ cd ~/.emacs.d
+$ make
+$ make doctor
+#+END_SRC
+
