@@ -6,9 +6,6 @@
  :n "-"  'dired-jump
  "M-B"   'recompile
 
- (:prefix "C-c v"
-   "m" 'magit-status)
-
  (:leader :n "d" 'deft))
 
 (provide '+bindings)
