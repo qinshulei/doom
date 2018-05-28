@@ -4,6 +4,7 @@
 (package! groovy-mode)
 (package! magit-gitflow)
 (package! pinentry)
+(package! prettier-js)
 (package! resize-window)
 
 (provide 'packages)
