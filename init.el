@@ -37,6 +37,7 @@
         +all             ; catch all popups that start with an asterix
         +defaults)       ; default popup rules
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
+       vinegar           ; 
        window-select     ; visually switch windows
 
        :emacs
@@ -78,6 +79,7 @@
        ;julia             ; a better, faster MATLAB
        (latex             ; writing papers in Emacs has never been so fun
         +latexmk
+        +pdf-tools
         +preview-pane)
        ;ledger            ; an accounting system in Emacs
        lua               ; one-based indices? one-based indices
@@ -101,7 +103,6 @@
        ;scala             ; java, but good
        sh                ; she sells (ba|z)sh shells on the C xor
        ;swift             ; who asked for emoji variables?
-       typescript        ; javascript, but better
        web               ; the tubes
 
        ;; Applications are complex and opinionated modules that transform Emacs

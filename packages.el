@@ -1,8 +1,8 @@
-;;; packages.el --- description -*- lexical-binding: t; -*-
+;;; packages.el --- description -*- lexical-binding: t; no-byte-compile: t; -*-
 
 (package! deft)
+(package! easy-hugo)
 (package! groovy-mode)
-(package! magit-gitflow)
 (package! pinentry)
 (package! prettier-js)
 (package! resize-window)

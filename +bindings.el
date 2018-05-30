@@ -8,6 +8,10 @@
 
  (:leader :n "d" 'deft))
 
+(map! :after neotree
+      :map neotree-mode-map
+      :n "M-RET" #'neotree-enter-ace-window)
+
 (provide '+bindings)
 
 ;;; +bindings.el ends here

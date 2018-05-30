@@ -19,8 +19,12 @@
 (setq +workspaces-switch-project-function #'dired)
 (setq auth-sources '("~/.authinfo.gpg"))
 
-(whitespace-mode nil)
+(after! easy-hugo
+  (setq easy-hugo-basedir "~/work/blog2/")
+  (setq easy-hugo-postdir "~/work/blog2/content/posts")
+  (setq easy-hugo-markdown-extension "md"))
 
+(whitespace-mode nil)
 
 (after! tide
         (set! :company-backend 'tide-mode 'company-flow 'company-tide))
