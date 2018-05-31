@@ -37,7 +37,6 @@
         +all             ; catch all popups that start with an asterix
         +defaults)       ; default popup rules
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
-       vinegar           ; 
        window-select     ; visually switch windows
 
        :emacs

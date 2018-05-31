@@ -5,13 +5,11 @@
 
 (setq ns-use-proxy-icon nil)
 
-(setq doom-font (font-spec :family "Fira Code" :size 13))
-(setq doom-variable-pitch-font (font-spec :family "Fira Code"))
-(setq doom-unicode-font (font-spec :family "Fira Code"))
-(setq doom-big-font (font-spec :family "Fira Code" :size 16))
+(setq doom-font (font-spec :family "Fira Code" :size 12))
+(setq doom-big-font (font-spec :family "Fira Code" :size 22))
 (setq doom-molokai-brighter-comments t)
+(setq doom-theme 'doom-opera)
 
-(setq doom-theme 'doom-opera-light)
 (unless (display-graphic-p)
   (setq doom-theme nil))
 
@@ -38,15 +36,9 @@
     '((select . t)))
   (set! :popup "^\\(?: ?\\*\\)?magit-diff:.*"
     '((slot . 2) (side . right) (window-height . 0.6))
-'((select . nil))))
+    '((select . nil))))
 
 (setq show-trailing-whitespace nil)
-
-(setq magit-repository-directories
-      `(
-        ("~/work/go/src/github.com/kubernetes-incubator/bootkube" . 1)
-        ("~/work/go/src/k8s.io/kubernetes" . 1)
-       ))
 
 (after! neotree
   (setq-default neo-smart-open t)

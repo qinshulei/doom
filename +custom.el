@@ -103,6 +103,21 @@
           :pass (lambda (&rest _) (+pass-get-secret "irc/freenode"))))
 
 ;; **********************************************************************
+;; Magit
+
+;; tools/magit
+(after! magit-repos
+  (setq magit-repository-directories
+        (cl-loop for dir in (directory-files "~/work" t "" t)
+                 if (file-directory-p dir)
+                 nconc (cl-loop for subdir in (directory-files dir t "^[^.]" t)
+                                if (and (file-directory-p subdir)
+                                        (file-directory-p (expand-file-name ".git/" subdir)))
+                                collect subdir)))
+  (add-to-list 'magit-repository-directories "~/work/go/src/github.com/kubernetes-incubator/bootkube")
+  (add-to-list 'magit-repository-directories "~/work/go/src/k8s.io/kubernetes"))
+
+;; **********************************************************************
 ;; Dired
 
 (defun rphillips/dired-setup ()

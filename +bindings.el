@@ -6,7 +6,8 @@
  :n "-"  'dired-jump
  "M-B"   'recompile
 
- (:leader :n "d" 'deft))
+ (:leader :n "d" 'deft)
+ (:leader :n "r" 'counsel-load-theme))
 
 (map! :after neotree
       :map neotree-mode-map
