@@ -110,7 +110,7 @@
                     (org-agenda-start-with-log-mode t)
                     (org-agenda-archives-mode t)
                     (org-agenda-time-grid nil))
-                   ("~/Dropbox/org/week-journal-summary.html"))
+                   ("~/Dropbox/org/work-journal-summary.html"))
                   ;; other commands go here
                   ))
 
