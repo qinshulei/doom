@@ -94,8 +94,8 @@
                           ((org-agenda-overriding-header "Finished")
                            (org-agenda-prefix-format "  * ")))
                     (todo "ACTIVE"
-                          ((org-agenda-overriding-header "Active"))
-                          (org-agenda-prefix-format "  * "))
+                          ((org-agenda-overriding-header "Active")
+                           (org-agenda-prefix-format "  * ")))
                     (todo "TODO"
                           ((org-agenda-overriding-header "Todo")
                            (org-agenda-prefix-format "  * "))))
