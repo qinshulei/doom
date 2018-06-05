@@ -16,6 +16,7 @@
   :commands  (groovy-mode))
 
 
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 (setq +workspaces-switch-project-function #'dired)
 (setq auth-sources '("~/.authinfo.gpg"))
 
