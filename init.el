@@ -17,7 +17,7 @@
        workspaces        ; tab emulation, persistence & separate workspaces
 
        :completion
-       (company +childframe +auto) ; the ultimate code completion backend
+       (company +auto) ; the ultimate code completion backend
        ivy                ; a search engine for love and life
        ;helm              ; the *other* search engine for love and life
        ;ido               ; the other *other* search engine...
