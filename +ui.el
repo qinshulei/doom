@@ -5,16 +5,10 @@
 
 (setq ns-use-proxy-icon nil)
 
-(setq doom-font (font-spec :family "Fira Mono" :size 14))
+(setq doom-font (font-spec :family "Fira Mono" :size 13))
 (setq doom-big-font (font-spec :family "Fira Mono" :size 22))
 (setq doom-molokai-brighter-comments t)
-(setq doom-theme 'doom-tomorrow-night)
-
-(defun rphillips:load-night-theme ()
-  (load-theme 'doom-tomorrow-night))
-
-(defun rphillips:load-light-theme ()
-  (load-theme 'doom-tomorrow-light))
+(setq doom-theme 'doom-one-light)
 
 (unless (display-graphic-p)
   (setq doom-theme nil))
