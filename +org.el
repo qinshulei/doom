@@ -39,11 +39,24 @@
           ))
 
    (setq org-publish-project-alist '(("org"
+                                      :auto-sitemap t
                                       :base-directory "~/Dropbox/org"
-                                      :html-extension "html"
                                       :base-extension "org"
+                                      :html-container "div"
+                                      :html-doctype "xhtml-strict"
+                                      :html-extension "html"
+                                      :html-preamble t
+                                      :html-postamble t
+                                      :html-link-use-abs-url nil
+                                      :html-head-include-scripts t
+                                      :html-head-include-default-style t
+                                      :html-head "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://www.star.bris.ac.uk/bjm/css/bjm.css\" />"
+                                      :org-html-html5-fancy nil
                                       :publishing-directory "~/Dropbox/org-html"
                                       :publishing-function org-html-publish-to-html
+                                      :section-numbers nil
+                                      :with-latex t
+                                      :with-toc nil
                                       )))
 
    (add-to-list 'org-agenda-custom-commands
