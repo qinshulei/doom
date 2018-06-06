@@ -38,55 +38,8 @@
            "* %?\n%i" :prepend t :kill-buffer t)
           ))
 
-   ;;(setq org-agenda-custom-commands
-   ;;      '(("wS" "Export Schedule" (
-   ;;                                 (tags-todo "-INACTIVE-HOLD-CANCELLED-REFILE-ARCHIVEr/!"
-   ;;                                            ((org-agenda-overriding-header "Active:")))
-   ;;                                 (tags-todo "-INACTIVE-HOLD-CANCELLED-REFILE-ARCHIVEr/!-CLOSED"
-   ;;                                            ((org-agenda-overriding-header "Done:"))))
-   ;;         ((org-agenda-start-with-log-mode t)
-   ;;          (org-agenda-compact-blocks t)
-   ;;          (org-agenda-log-mode-items '(clock))
-   ;;          (org-agenda-todo-ignore-deadlines 'near)
-   ;;          (org-agenda-todo-ignore-scheduled t)) ("~/Dropbox/org/work-journal-summary.html"))
-   ;;        ("X" "Agenda" ((agenda "") (alltodo))
-   ;;         ((org-agenda-ndays 10)
-   ;;          (org-agenda-start-on-weekday nil)
-   ;;          (org-agenda-start-day "-3d")
-   ;;          (org-agenda-start-with-log-mode t)
-   ;;          (org-agenda-log-mode-items '(closed clock state)))
-   ;;         )))
-
-
    (add-to-list 'org-agenda-custom-commands
                 '("R" . "Review" ))
-
-   (setq org-agenda-custom-commands
-      '(("P" "Printed agenda"
-         ((agenda "" ((org-agenda-span 7)                      ;; overview of appointments
-                      (org-agenda-start-on-weekday nil)         ;; calendar begins today
-                      (org-agenda-repeating-timestamp-show-all t)
-                      (org-agenda-entry-types '(:timestamp :sexp))))
-          (agenda "" ((org-agenda-span 1)                      ; daily agenda
-                      (org-deadline-warning-days 7)            ; 7 day advanced warning for deadlines
-                      (org-agenda-todo-keyword-format "[ ]")
-                      (org-agenda-scheduled-leaders '("" ""))
-                      (org-agenda-prefix-format "%t%s")))
-          (todo "TODO"                                          ;; todos sorted by context
-                ((org-agenda-prefix-format "[ ] %T: ")
-                 (org-agenda-sorting-strategy '(tag-up priority-down))
-                 (org-agenda-todo-keyword-format "")
-                 (org-agenda-overriding-header "\nTasks by Context\n------------------\n"))))
-         ((org-agenda-with-colors nil)
-          (org-agenda-compact-blocks t)
-          (org-agenda-remove-tags t)
-          (ps-number-of-columns 2)
-           (ps-landscape-mode t))
-         ("~/agenda.ps"))
-        ;; other commands go here
-        ))
-
-   (setq +agenda-date-str (format ""))
 
    (setq org-agenda-custom-commands
                 '(("Rw" "Week in review"
