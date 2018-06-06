@@ -38,6 +38,14 @@
            "* %?\n%i" :prepend t :kill-buffer t)
           ))
 
+   (setq org-publish-project-alist '(("org"
+                                      :base-directory "~/Dropbox/org"
+                                      :html-extension "html"
+                                      :base-extension "org"
+                                      :publishing-directory "~/Dropbox/org-html"
+                                      :publishing-function org-html-publish-to-html
+                                      )))
+
    (add-to-list 'org-agenda-custom-commands
                 '("R" . "Review" ))
 
