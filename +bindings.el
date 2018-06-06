@@ -6,6 +6,7 @@
  :n "-"  'dired-jump
  "M-B"   'recompile
 
+
  (:leader :n "d" 'deft)
  (:leader :n "r" 'counsel-load-theme))
 

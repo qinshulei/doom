@@ -10,6 +10,12 @@
 (setq doom-molokai-brighter-comments t)
 (setq doom-theme 'doom-tomorrow-night)
 
+(defun rphillips:load-night-theme ()
+  (load-theme 'doom-tomorrow-night))
+
+(defun rphillips:load-light-theme ()
+  (load-theme 'doom-tomorrow-light))
+
 (unless (display-graphic-p)
   (setq doom-theme nil))
 
@@ -21,23 +27,6 @@
        (with-selected-frame frame
          (setq-local whitespace-style nil))))))
 
-;; Magit rules
-;; Keeps it on the side
-;; Thanks to https://github.com/fuxialexander/doom-emacs-private-xfu
-(after! magit
-  (set! :popup "^\\(?: ?\\*\\)?magit.*: "
-    '((slot . -1) (side . right) (size . 80))
-    '((select . t) (quit . nil)))
-  (set! :popup "^\\*magit.*popup\\*"
-    '((slot . 0) (side . right))
-    '((select . t)))
-  (set! :popup "^\\(?: ?\\*\\)?magit-revision:.*"
-    '((slot . 2) (side . right) (window-height . 0.6))
-    '((select . t)))
-  (set! :popup "^\\(?: ?\\*\\)?magit-diff:.*"
-    '((slot . 2) (side . right) (window-height . 0.6))
-    '((select . nil))))
-
 (setq show-trailing-whitespace nil)
 
 (after! neotree
@@ -46,7 +35,6 @@
   (setq neo-theme (if window-system 'icons 'nerd))
   (setq neo-show-hidden-files nil)
   (setq neo-autorefresh t)
-  ;;(setq neo-vc-integration '(face char))
   (set-face-attribute 'neo-vc-edited-face nil
                       :foreground "#E2C08D")
   (set-face-attribute 'neo-vc-added-face nil
