@@ -11,7 +11,12 @@
 (setq doom-theme 'doom-one-light)
 
 (unless (display-graphic-p)
-  (setq doom-theme nil))
+  (setq doom-theme 'doom-one)
+  (set-face-background 'default "black")
+  (set-face-background 'region "black")
+  (set-face-foreground 'default "white")
+  (set-face-foreground 'region "gray60")
+  (set-background-color "black"))
 
 (after! posframe
   (add-variable-watcher

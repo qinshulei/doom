@@ -13,6 +13,8 @@
          :desc "Filter"           :nve "f" #'org-match-sparse-tree
          :desc "Tag heading"      :nve "t" #'org-set-tags-command)
 
+   (setq +org-dir "~/Dropbox/org")
+
    ;; Save habit to markdown automatically
    (defun convert-habit-to-markdown ()
      (interactive)
@@ -24,7 +26,7 @@
    (setq org-startup-folded 'showeverything)
 
    ;; Set archive location
-   (setq org-archive-location (concat "~/Dropbox/org/.archive/" (format-time-string "%Y-%m") ".org::"))
+   (setq org-archive-location (concat "~/Dropbox/org/.archive/%s-" (format-time-string "%Y-%m") ".org::"))
 
    ;; Org capture template
    (setq org-capture-templates
@@ -57,33 +59,45 @@
                                       :section-numbers nil
                                       :with-latex t
                                       :with-toc nil
-                                      )))
-
-   (add-to-list 'org-agenda-custom-commands
-                '("R" . "Review" ))
+                                      )
+                                     ("md"
+                                      :base-directory "~/Dropbox/org"
+                                      :base-extension "md"
+                                      :html-doctype "xhtml-strict"
+                                      :html-extension "html"
+                                      :html-preamble t
+                                      :html-postamble t
+                                      :html-link-use-abs-url nil
+                                      :publishing-directory "~/Dropbox/org-html"
+                                      :publishing-function org-md-publish-to-md
+                                      :section-numbers nil
+                                      :with-latex t
+                                      :with-toc nil
+                                      )
+                                     ))
 
    (setq org-agenda-custom-commands
                 '(("Rw" "Week in review"
-                   ((todo "DONE"
-                          ((org-agenda-overriding-header "Finished")
-                           (org-agenda-prefix-format "  * ")))
-                    (todo "ACTIVE"
-                          ((org-agenda-overriding-header "Active")
-                           (org-agenda-prefix-format "  * ")))
-                    (todo "TODO"
-                          ((org-agenda-overriding-header "Todo")
-                           (org-agenda-prefix-format "  * "))))
+                   ((agenda "" ((org-agenda-span 1)))
+                    (todo "DONE" ((org-agenda-overriding-header "Done")
+                                  (org-agenda-prefix-format "  * ")))
+                    (todo "ACTIVE" ((org-agenda-overriding-header "Active")
+                                    (org-agenda-prefix-format "  * ")))
+                    (todo "TODO" ((org-agenda-overriding-header "Todo")
+                                  (org-agenda-prefix-format "  * "))))
 
-                   ((org-agenda-span '10)
+                   ((org-agenda-span 10)
                     (org-agenda-start-on-weekday 0)
                     (org-agenda-start-day "-7d")
                     (org-agenda-files '("~/Dropbox/org/work-journal.org"))
                     (org-agenda-show-all-dates t)
                     (org-agenda-compact-blocks t)
+                    (org-agenda-markdown)
                     (org-agenda-remove-tags t)
                     (org-agenda-start-with-log-mode t)
-                    (org-agenda-archives-mode t)
+                    (org-agenda-skip-archived-trees t)
                     (org-agenda-time-grid nil))
+
                    ("~/Dropbox/org/work-journal-summary.html"))
                   ;; other commands go here
                   ))
