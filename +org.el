@@ -86,7 +86,7 @@
                     (todo "TODO" ((org-agenda-overriding-header "Todo")
                                   (org-agenda-prefix-format "  * "))))
 
-                   ((org-agenda-span 10)
+                   ((org-agenda-span 7)
                     (org-agenda-start-on-weekday 0)
                     (org-agenda-start-day "-7d")
                     (org-agenda-files '("~/Dropbox/org/work-journal.org"))
