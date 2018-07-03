@@ -5,8 +5,8 @@
 
 (setq ns-use-proxy-icon nil)
 
-(setq doom-font (font-spec :family "Iosevka" :size 13))
-(setq doom-big-font (font-spec :family "Iosevka" :size 26))
+(setq doom-font (font-spec :family "Iosevka Term" :size 13))
+(setq doom-big-font (font-spec :family "Iosevka Term" :size 26))
 (setq doom-molokai-brighter-comments t)
 (setq doom-theme 'doom-one-light)
 
