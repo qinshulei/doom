@@ -78,7 +78,10 @@
 
    (setq org-agenda-custom-commands
                 '(("Rw" "Week in review"
-                   ((agenda "" ((org-agenda-span 1)))
+                   ((agenda "" ((org-agenda-span 1)
+                                (org-agenda-start-day "0d")
+                                (org-agenda-skip-function '(org-agenda-skip-subtree-if 'regexp ".*"))
+                                ))
                     (todo "DONE" ((org-agenda-overriding-header "Done")
                                   (org-agenda-prefix-format "  * ")))
                     (todo "ACTIVE" ((org-agenda-overriding-header "Active")
